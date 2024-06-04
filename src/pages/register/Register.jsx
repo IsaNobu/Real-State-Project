@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import { useContext, useState } from "react";
 import { RiEyeCloseLine, RiEyeFill } from "react-icons/ri";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const [passShow, setPassShow] = useState(false);
@@ -46,6 +47,9 @@ const Register = () => {
   };
   return (
     <div className="bg-[#F3EFE7] w-[390px] md:w-[600px] h-[700px] mx-auto rounded-xl p-6 mt-16">
+      <Helmet>
+        <title>Register Here</title>
+      </Helmet>
       <ToastContainer />
       <form onSubmit={handleLogin}>
         <h1 className="text-2xl text-center">
