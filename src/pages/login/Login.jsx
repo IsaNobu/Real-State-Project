@@ -1,16 +1,19 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { NavLink } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Login = () => {
-  const { signInUser, signInWithGoogle } = useContext(AuthContext);
+  const { signInUser, signInWithGoogle, signInWithGitHub } =
+    useContext(AuthContext);
+
+  const [wrongInfo, setWrongInfo] = useState("");
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
 
     // email login
 
@@ -18,6 +21,7 @@ const Login = () => {
       .then((result) => [console.log(result)])
       .catch((error) => {
         console.log(error.message);
+        setWrongInfo(error.message);
       });
   };
 
@@ -30,8 +34,17 @@ const Login = () => {
         console.log(error.message);
       });
   };
+  const handleGitHubSignIn = () => {
+    signInWithGitHub()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
-    <div className="bg-[#F3EFE7] w-[390px] md:w-[600px] h-[500px] mx-auto rounded-xl p-6 mt-16">
+    <div className="bg-[#F3EFE7] w-[390px] md:w-[600px] h-[550px] mx-auto rounded-xl p-6 mt-16">
       <form onSubmit={handleLogin}>
         <h1 className="text-2xl text-center">
           Login here to get our websites full experience !!!
@@ -56,6 +69,7 @@ const Login = () => {
             name="password"
             required
           />
+          {wrongInfo && <span className="text-red-600">{wrongInfo}</span>}
           <button className="btn w-[290px] bg-emerald-800 text-white text-xl">
             Login
           </button>
@@ -63,7 +77,7 @@ const Login = () => {
             <div className="text-4xl" onClick={handleGoogleSignIn}>
               <FaGoogle />
             </div>
-            <div className="text-4xl">
+            <div className="text-4xl" onClick={handleGitHubSignIn}>
               <FaGithub />
             </div>
           </div>

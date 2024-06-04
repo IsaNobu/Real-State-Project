@@ -1,0 +1,57 @@
+[
+    {
+      "image": "https://unsplash.com/s/photos/farmland",
+      "estate_title": "Spacious Agricultural Land",
+      "id": 1,
+      "segment_name": "Land",
+      "description": "This vast plot of land is perfect for agricultural use. With fertile soil and ample space, it's ideal for farming, ranching, or other agricultural endeavors.",
+      "price": 1500000,
+      "status": "sale"
+    },
+    {
+      "image": "https://www.istockphoto.com/photos/commercial-land",
+      "estate_title": "Prime Commercial Location",
+      "id": 2,
+      "segment_name": "Land",
+      "description": "This strategically located commercial land is ideal for businesses seeking high visibility and accessibility.  Excellent for development into shopping centers, office buildings, or other commercial ventures.",
+      "price": 3000000,
+      "status": "rent"
+    },
+    {
+      "image": "https://www.freepik.com/free-photos-vectors/residential-land",
+      "estate_title": "Secluded Residential Plot",
+      "id": 3,
+    "segment_name": "Land",
+      "description": "This peaceful residential plot is perfect for building your dream home.  Tranquil surroundings and ample space provide a perfect canvas for your future residence.",
+      "price": 800000,
+      "status": "sale"
+    },
+    {
+      "image": "https://www.istockphoto.com/photos/industrial-land",
+      "estate_title": "Large Industrial Area",
+      "id": 4,
+      "segment_name": "Land",
+      "description": "This expansive industrial land is suitable for various industrial applications.  With easy access to transportation routes, it's ideal for factories, warehouses, or other large-scale operations.",
+      "price": 2500000,
+      "status": "sale"
+    },
+    {
+      "image": "https://www.landsearch.com/leases/florida",
+      "estate_title": "Vacant Land for Rent",
+      "id": 5,
+      "segment_name": "Land",
+      "description": "This vacant land is available for rent, suitable for temporary projects, storage, or other short-term needs.",
+      "price": 5000,
+      "status": "rent"
+    },
+    {
+      "image": "https://www.shutterstock.com/search/land-development",
+      "estate_title": "Land Ripe for Development",
+      "id": 6,
+      "segment_name": "Land",
+      "description": "This strategically located land is primed for development. Zoned for mixed-use, it presents a lucrative opportunity for residential, commercial, or a combination of both.",
+      "price": 2000000,
+      "status": "sale"
+    }
+  ]
+  
