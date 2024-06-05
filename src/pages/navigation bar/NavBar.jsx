@@ -6,7 +6,6 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
-
   const handleLogOut = () => {
     logOut()
       .then((result) => {
@@ -20,16 +19,18 @@ const NavBar = () => {
   const NavLinks = (
     <div className="flex items-center gap-6">
       {user ? (
-        <NavLink to={"/login"}>
-          <div
-            className="tooltip inline-flex items-center gap-6"
-            data-tip="hello"
-          >
-            <img
-              className="rounded-full w-[40px]"
-              src={user?.photoURL}
-              alt=""
-            />
+        <NavLink to={"/"}>
+          <div className="inline-flex items-center gap-6">
+            <div
+              className="tooltip tooltip-bottom z-10 "
+              data-tip={user?.displayName}
+            >
+              <img
+                className="rounded-full w-[40px]"
+                src={user?.photoURL}
+                alt=""
+              />
+            </div>
             <button onClick={handleLogOut}>Sign Out</button>
           </div>
         </NavLink>
@@ -72,8 +73,7 @@ const NavBar = () => {
       <div className="navbar-end space-x-6 md:flex hidden">
         <p className="font-bold">Contact</p>
         <p className="font-bold flex items-center">
-          <IoCallOutline />
-          +1 800-555-6789
+          <IoCallOutline /> +1 800-555-6789
         </p>
       </div>
     </div>

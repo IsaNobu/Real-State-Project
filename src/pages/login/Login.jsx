@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const { signInUser, signInWithGoogle, signInWithGitHub } =
     useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const [wrongInfo, setWrongInfo] = useState("");
 
@@ -19,7 +21,10 @@ const Login = () => {
     // email login
 
     signInUser(email, password)
-      .then((result) => [console.log(result)])
+      .then((result) => {
+        console.log(result);
+        navigate(location?.state ? location.state : "/");
+      })
       .catch((error) => {
         console.log(error.message);
         setWrongInfo(error.message);
@@ -30,6 +35,7 @@ const Login = () => {
     signInWithGoogle()
       .then((result) => {
         console.log(result);
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.log(error.message);

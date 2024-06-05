@@ -6,4 +6,5 @@ Packages Used -
 4. react helmet async
 5. daisyUi
 6. tailwind css
-   7.firebase
+7. firebase
+8. leaflet

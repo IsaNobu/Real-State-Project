@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Slider from "./slider/Slider";
-import RealEstateSection from "./real estate card/RealEstateSection";
+import RealEstateCard from "./real estate card/RealEstateSection";
 
 const Home = () => {
   return (
@@ -9,7 +9,7 @@ const Home = () => {
         <title>Home</title>
       </Helmet>
       <Slider></Slider>
-      <RealEstateSection></RealEstateSection>
+      <RealEstateCard></RealEstateCard>
     </div>
   );
 };
