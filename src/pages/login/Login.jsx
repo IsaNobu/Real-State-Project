@@ -1,16 +1,16 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Helmet } from "react-helmet-async";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const { signInUser, signInWithGoogle, signInWithGitHub } =
     useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
-
-  const [wrongInfo, setWrongInfo] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -24,10 +24,12 @@ const Login = () => {
       .then((result) => {
         console.log(result);
         navigate(location?.state ? location.state : "/");
+        toast("You've successfully logged in");
       })
       .catch((error) => {
         console.log(error.message);
-        setWrongInfo(error.message);
+        toast("Your email or password is incorrect");
+        toast("Your email or password is incorrect");
       });
   };
 
@@ -36,8 +38,10 @@ const Login = () => {
       .then((result) => {
         console.log(result);
         navigate(location?.state ? location.state : "/");
+        toast("You've successfully logged in");
       })
       .catch((error) => {
+        toast("Your email or password is incorrect");
         console.log(error.message);
       });
   };
@@ -45,13 +49,17 @@ const Login = () => {
     signInWithGitHub()
       .then((result) => {
         console.log(result);
+        navigate(location?.state ? location.state : "/");
+        toast("You've successfully logged in");
       })
       .catch((error) => {
+        toast("Your email or password is incorrect");
         console.log(error.message);
       });
   };
   return (
     <div className="bg-[#F3EFE7] w-[390px] md:w-[600px] h-[550px] mx-auto rounded-xl p-6 mt-16">
+      <ToastContainer />
       <Helmet>
         <title>Login Here</title>
       </Helmet>
@@ -79,7 +87,6 @@ const Login = () => {
             name="password"
             required
           />
-          {wrongInfo && <span className="text-red-600">{wrongInfo}</span>}
           <button className="btn w-[290px] bg-emerald-800 text-white text-xl">
             Login
           </button>

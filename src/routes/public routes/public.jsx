@@ -5,6 +5,7 @@ import Login from "../../pages/login/Login";
 import Register from "../../pages/register/Register";
 import RealEstateDetails from "../../pages/home/real estate card/RealEstateDetails";
 import PrivetRoute from "../private route/PrivateRoute";
+import Review from "../../pages/review/Review";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/review",
+        element: <Review />,
       },
       {
         path: "/RealEstateDetails/:id",

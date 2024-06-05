@@ -1,7 +1,7 @@
 // import PropTypes from 'prop-types';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { RiEyeCloseLine, RiEyeFill } from "react-icons/ri";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -11,6 +11,8 @@ const Register = () => {
   const [passShow, setPassShow] = useState(false);
 
   const { createUser } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -40,13 +42,16 @@ const Register = () => {
       .then((result) => {
         console.log(result);
         toast("You've Successfully registered");
+        navigate("/");
       })
       .catch((error) => {
+        toast("Please fill up your form carefully");
         console.log(error.message);
       });
   };
   return (
     <div className="bg-[#F3EFE7] w-[390px] md:w-[600px] h-[700px] mx-auto rounded-xl p-6 mt-16">
+      <ToastContainer />
       <Helmet>
         <title>Register Here</title>
       </Helmet>
@@ -82,8 +87,9 @@ const Register = () => {
             autoComplete="photo"
             className="md:w-[400px] w-[290px] rounded-lg px-3 py-2"
             placeholder="Photo URL"
-            type="url"
+            type="text"
             name="photo"
+            required
           />
 
           <label>Enter your Password :</label>

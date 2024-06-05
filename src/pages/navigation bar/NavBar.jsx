@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const NavBar = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, loading } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut()
       .then((result) => {
@@ -16,6 +16,11 @@ const NavBar = () => {
       });
   };
 
+  if (loading) {
+    return <span className="loading loading-spinner loading-md"></span>;
+  }
+
+  console.log(user?.email);
   const NavLinks = (
     <div className="flex items-center gap-6">
       {user ? (
@@ -41,6 +46,7 @@ const NavBar = () => {
       )}
       <NavLink to={"/"}>Home</NavLink>
       <NavLink to={"/"}>Update Profile</NavLink>
+      <NavLink to={"/review"}>Review</NavLink>
     </div>
   );
   return (
@@ -59,7 +65,7 @@ const NavBar = () => {
               </div>
               <ul
                 tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 text-black space-y-6"
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box text-black space-y-6 z-10"
               >
                 {NavLinks}
               </ul>
@@ -68,13 +74,23 @@ const NavBar = () => {
         </div>
       </div>
       <div className="navbar-center">
-        <Link className="text-2xl font-bold">LandLegacy</Link>
+        <Link to={"/"} className="text-2xl font-bold">
+          LandLegacy
+        </Link>
       </div>
       <div className="navbar-end space-x-6 md:flex hidden">
-        <p className="font-bold">Contact</p>
-        <p className="font-bold flex items-center">
-          <IoCallOutline /> +1 800-555-6789
-        </p>
+        {user ? (
+          user?.email || (
+            <span className="loading loading-spinner loading-xs"></span>
+          )
+        ) : (
+          <>
+            <p className="font-bold">Contact</p>
+            <p className="font-bold flex items-center">
+              <IoCallOutline /> +1 800-555-6789
+            </p>
+          </>
+        )}
       </div>
     </div>
   );

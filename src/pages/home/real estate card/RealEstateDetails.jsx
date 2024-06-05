@@ -23,11 +23,11 @@ const RealEstateDetails = () => {
   } = info;
 
   return (
-    <div className="flex justify-around">
+    <div className="flex lg:flex-row flex-col lg:justify-around">
       <Helmet>
         <title>Land Details</title>
       </Helmet>
-      <div className="border-2 bg-[#F3EFE7] rounded-3xl w-[800px]">
+      <div className="border-2 bg-[#F3EFE7] rounded-3xl lg:mx-0 mx-auto mt-6 md:w-[600px] w-[400px] lg:w-[800px] lg:h-[968px]">
         <div>
           <img className="w-[800px] rounded-t-3xl" src={image} alt="" />
         </div>
@@ -52,7 +52,7 @@ const RealEstateDetails = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-6 ml-6 mb-6">
             <img
-              className="w-[100px] rounded-[100%]"
+              className="lg:w-[100px] md:w-[70px] w-[50px] rounded-[100%]"
               src={profileImage}
               alt=""
             />
@@ -63,10 +63,11 @@ const RealEstateDetails = () => {
           </div>
         </div>
       </div>
-      <div className="h-full mt-20">
+      <div className="h-[600px] lg:w-[400px] lg:mx-0 mx-auto md:w-[400px] w-[100px] mt-24 lg:mt-28">
         <MapContainer
           center={[22.788897560328394, 90.33787901174063]}
           zoom={10}
+          scrollWheelZoom={false}
         >
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
