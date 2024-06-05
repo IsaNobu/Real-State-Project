@@ -1,6 +1,8 @@
 [
     {
-      "image": "https://unsplash.com/s/photos/farmland",
+      "profileImage": "https://i.ibb.co/DgJvtz5/img1.jpg",
+      "image": "https://i.ibb.co/bvzP65D/img-6.jpg",
+      "name": "ornok",
       "estate_title": "Spacious Agricultural Land",
       "id": 1,
       "segment_name": "Land",
@@ -9,7 +11,9 @@
       "status": "sale"
     },
     {
-      "image": "https://www.istockphoto.com/photos/commercial-land",
+      "profileImage": "https://i.ibb.co/yNWnV2Q/img2.jpg",
+      "image": "https://i.ibb.co/JHzCgpR/img-1.jpg",
+      "name": "alfaz",
       "estate_title": "Prime Commercial Location",
       "id": 2,
       "segment_name": "Land",
@@ -18,7 +22,9 @@
       "status": "rent"
     },
     {
-      "image": "https://www.freepik.com/free-photos-vectors/residential-land",
+      "profileImage": "https://i.ibb.co/3yqyYcd/img3.jpg",
+      "image": "https://i.ibb.co/Sn0Q3Nx/img-2.jpg",
+      "name": "alfi",
       "estate_title": "Secluded Residential Plot",
       "id": 3,
     "segment_name": "Land",
@@ -27,7 +33,9 @@
       "status": "sale"
     },
     {
-      "image": "https://www.istockphoto.com/photos/industrial-land",
+      "profileImage": "https://i.ibb.co/1JbdgMG/img4.jpg",
+      "image": "https://i.ibb.co/chnq5tL/img-3.jpg",
+      "name": "rofiq",
       "estate_title": "Large Industrial Area",
       "id": 4,
       "segment_name": "Land",
@@ -36,7 +44,9 @@
       "status": "sale"
     },
     {
-      "image": "https://www.landsearch.com/leases/florida",
+      "profileImage": "https://i.ibb.co/b2Ct4Lj/img5.jpg",
+      "image": "https://i.ibb.co/r7Bh77p/img-4.jpg",
+      "name": "kartik",
       "estate_title": "Vacant Land for Rent",
       "id": 5,
       "segment_name": "Land",
@@ -45,7 +55,9 @@
       "status": "rent"
     },
     {
-      "image": "https://www.shutterstock.com/search/land-development",
+      "profileImage": "  https://i.ibb.co/305zxJr/img6.jpg",
+      "image": "https://i.ibb.co/wQsBM5m/img-5.jpg",
+      "name": "jamol",
       "estate_title": "Land Ripe for Development",
       "id": 6,
       "segment_name": "Land",
@@ -54,4 +66,3 @@
       "status": "sale"
     }
   ]
-  
