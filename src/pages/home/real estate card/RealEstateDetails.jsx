@@ -3,6 +3,7 @@ import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { CiLink } from "react-icons/ci";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { Helmet } from "react-helmet-async";
+import Facilities from "./Facilities";
 
 const RealEstateDetails = () => {
   const data = useLoaderData();
@@ -20,6 +21,9 @@ const RealEstateDetails = () => {
     status,
     segment_name,
     land_name,
+    area,
+    facilities,
+    location,
   } = info;
 
   return (
@@ -27,12 +31,16 @@ const RealEstateDetails = () => {
       <Helmet>
         <title>Land Details</title>
       </Helmet>
-      <div className="border-2 bg-[#F3EFE7] rounded-3xl lg:mx-0 mx-auto mt-6 md:w-[600px] w-[400px] lg:w-[800px] lg:h-[968px]">
+      <div className="border-2 bg-[#F3EFE7] rounded-3xl lg:mx-0 mx-auto mt-6 md:w-[600px] w-[400px] lg:w-[800px] ">
         <div>
           <img className="w-[800px] rounded-t-3xl" src={image} alt="" />
         </div>
         <div className="space-y-6 p-6">
-          <div className="text-2xl font-semibold">{land_name}</div>
+          <div className="text-2xl font-semibold border-b-2 border-black pb-6 border-dotted">
+            {land_name}
+          </div>
+          <div className="text-2xl font-semibold">area: {area} sq ft.</div>
+          <div className="text-lg font-semibold">location: {location}</div>
           <div>
             <span className="text-xl font-medium text-emerald-900 flex items-center gap-3">
               <RiMoneyDollarCircleLine className="text-4xl" />
@@ -47,6 +55,14 @@ const RealEstateDetails = () => {
             <p className="text-xl font-semibold">
               <span className="underline">description:</span> {description}
             </p>
+            <div>
+              <span className="text-lg font-semibold underline">
+                Facilities:
+              </span>{" "}
+              {facilities.map((data, idx) => (
+                <Facilities key={idx} data={data}></Facilities>
+              ))}
+            </div>
           </div>
         </div>
         <div className="flex justify-between items-center">

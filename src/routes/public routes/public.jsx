@@ -6,11 +6,13 @@ import Register from "../../pages/register/Register";
 import RealEstateDetails from "../../pages/home/real estate card/RealEstateDetails";
 import PrivetRoute from "../private route/PrivateRoute";
 import Review from "../../pages/review/Review";
+import ErrorPage from "../../error-page";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -26,7 +28,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/review",
-        element: <Review />,
+        element: (
+          <PrivetRoute>
+            <Review />
+          </PrivetRoute>
+        ),
       },
       {
         path: "/RealEstateDetails/:id",
