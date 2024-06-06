@@ -8,3 +8,11 @@ Packages Used -
 6. tailwind css
 7. firebase
 8. leaflet
+
+my websites 5 key features
+
+1. there's private components so not everyone can access that.
+2. you can navigate vey easily from the nav bar.
+3. register and unlock all the features in my websites with the highest security.
+4. login and and you won't have to login every time.
+5. you can update your profile any time you want.
