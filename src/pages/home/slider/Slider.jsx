@@ -21,7 +21,7 @@ const Slider = () => {
           </h1>
           <img
             className="w-full md:h-[650px] h-[626px] lg:h-[900px]"
-            src="../../../../public/Assets/image-1.jpg"
+            src="https://i.ibb.co/x8Cpj2m/image-3.jpg"
             alt="Slide 1 description"
           />
         </div>
@@ -34,7 +34,7 @@ const Slider = () => {
           </h1>
           <img
             className="w-full md:h-[650px] h-[626px] lg:h-[900px]"
-            src="../../../../public/Assets/image-2.jpg"
+            src="https://i.ibb.co/VB161vp/image-2.jpg"
             alt="Slide 1 description"
           />
         </div>
@@ -47,7 +47,7 @@ const Slider = () => {
           </h1>
           <img
             className="w-full md:h-[650px] h-[626px] lg:h-[900px]"
-            src="../../../../public/Assets/image-3.jpg"
+            src="https://i.ibb.co/jMgT08Y/image-1.jpg"
             alt="Slide 1 description"
           />
         </div>
