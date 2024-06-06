@@ -7,6 +7,7 @@ import RealEstateDetails from "../../pages/home/real estate card/RealEstateDetai
 import PrivetRoute from "../private route/PrivateRoute";
 import Review from "../../pages/review/Review";
 import ErrorPage from "../../error-page";
+import UpdateProfile from "../../pages/update profile/UpdateProfile";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,14 @@ const router = createBrowserRouter([
         element: (
           <PrivetRoute>
             <Review />
+          </PrivetRoute>
+        ),
+      },
+      {
+        path: "/update-Profile",
+        element: (
+          <PrivetRoute>
+            <UpdateProfile />
           </PrivetRoute>
         ),
       },

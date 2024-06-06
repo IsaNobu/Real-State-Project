@@ -20,7 +20,6 @@ const NavBar = () => {
     return <span className="loading loading-spinner loading-md"></span>;
   }
 
-  console.log(user?.email);
   const NavLinks = (
     <div className="flex items-center gap-6">
       {user ? (
@@ -45,7 +44,7 @@ const NavBar = () => {
         </>
       )}
       <NavLink to={"/"}>Home</NavLink>
-      <NavLink to={"/"}>Update Profile</NavLink>
+      <NavLink to={"/update-profile"}>Update Profile</NavLink>
       <NavLink to={"/review"}>Review</NavLink>
     </div>
   );

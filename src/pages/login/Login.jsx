@@ -29,7 +29,6 @@ const Login = () => {
       .catch((error) => {
         console.log(error.message);
         toast("Your email or password is incorrect");
-        toast("Your email or password is incorrect");
       });
   };
 
